@@ -6,7 +6,7 @@
 </head>
 <body>
   <script>
-let choices = ['Rock', 'Paper', 'Scissors'];
+let choices = ['rock', 'paper', 'scissors'];
 
 function computerPlay () {
   let result = choices[Math.floor(Math.random() * choices.length)];
@@ -16,20 +16,47 @@ function computerPlay () {
 
 
 function playRound(playerSelection, computerSelection) {
-  if (playerSelection == 'Rock' && computerSelection == 'Rock'){
-    return 'Tie!'
+  if (playerSelection == 'rock'){
+    if (computerSelection == 'rock'){
+      return 'Tie!';
+    }
+    else if (computerSelection == 'paper'){
+      return 'Computer Wins!';
+    }
+    else if (computerSelection == 'scissors'){
+      return 'Player Wins!';
+    }
   }
-  else if ((playerSelection == 'Rock') && computerSelection == 'Paper'){
-    return 'Computer Wins!'
+
+  if (playerSelection == 'paper'){
+    if (computerSelection == 'paper'){
+      return 'Tie!';
+    }
+    else if (computerSelection == 'scissors'){
+      return 'Computer Wins!';
+    }
+    else if (computerSelection == 'rock'){
+      return 'Player Wins!';
+    }
   }
-  else 
-    return 'finish the code!'
+
+  if (playerSelection == 'scissors'){
+    if (computerSelection == 'scissors'){
+      return 'Tie!';
+    }
+    else if (computerSelection == 'rock'){
+      return 'Computer Wins!';
+    }
+    else if (computerSelection == 'paper'){
+      return 'Player Wins!';
+    }
+  }
 }
 
 const computerSelection = computerPlay();
-
-const playerSelection  = 'Rock';
-console.log('Computer Choses' + ' ' +computerSelection);
+const playerSelection  = prompt().toLowerCase();
+console.log('Player Chosese' + ' ' + playerSelection)
+console.log('Computer Choses' + ' ' + computerSelection);
 console.log(playRound(playerSelection, computerSelection));
 
 

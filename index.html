@@ -6,7 +6,34 @@
 </head>
 <body>
   <script>
-    // Your JavaScript goes here!
+let choices = ['Rock', 'Paper', 'Scissors'];
+
+function computerPlay () {
+  let result = choices[Math.floor(Math.random() * choices.length)];
+  return result;
+}
+
+
+
+function playRound(playerSelection, computerSelection) {
+  if (playerSelection == 'Rock' && computerSelection == 'Rock'){
+    return 'Tie!'
+  }
+  else if ((playerSelection == 'Rock') && computerSelection == 'Paper'){
+    return 'Computer Wins!'
+  }
+  else 
+    return 'finish the code!'
+}
+
+const computerSelection = computerPlay();
+
+const playerSelection  = 'Rock';
+console.log('Computer Choses' + ' ' +computerSelection);
+console.log(playRound(playerSelection, computerSelection));
+
+
+
   </script>
 </body>
 </html>
